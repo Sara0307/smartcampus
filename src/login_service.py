@@ -5,7 +5,7 @@ from .user import User
 logger = logging.getLogger("smartcampus.security")
 
 MSG_SUCCESS = "Connexion reussie"
-MSG_INVALID = "Identifiants incorrects"
+MSG_INVALID = "Identifiants incorrects, veuillez vérifier votre e-mail et votre mot de passe et réessayer"
 MAX_FAILURES = 3
 
 
