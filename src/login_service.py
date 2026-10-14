@@ -1,3 +1,4 @@
+# Service d'authentification SmartCampus (SCRUM-8)
 import logging
 
 from .user import User
