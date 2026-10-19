@@ -1,3 +1,4 @@
+
 pipeline {
     agent any
 
@@ -8,13 +9,23 @@ pipeline {
             }
         }
 
+        stage('Verify Python') {
+            steps {
+                bat '"C:\\Users\\hafih\\AppData\\Local\\Programs\\Python\\Python312\\python.exe" --version'
+                bat '"C:\\Users\\hafih\\AppData\\Local\\Programs\\Python\\Python312\\python.exe" -m pytest --version'
+            }
+        }
+
         stage('Test Python') {
             steps {
-                sh '''
-                    python3 --version
-                    python3 -m pytest -v
-                '''
+                bat '"C:\\Users\\hafih\\AppData\\Local\\Programs\\Python\\Python312\\python.exe" -m pytest -v'
             }
+        }
+    }
+
+    post {
+        always {
+            echo 'Execution du pipeline terminee.'
         }
     }
 }
